@@ -25,16 +25,26 @@ function requireEnv(name) {
   return value;
 }
 
+function requireEnvAny(names) {
+  for (const name of names) {
+    const value = process.env[name];
+    if (value) {
+      return value;
+    }
+  }
+  throw new Error('Missing required environment variable. Expected one of: ' + names.join(', '));
+}
+
 const CREDENTIALS = {
-  user: {
-    username: requireEnv('USER_USERNAME'),
-    password: requireEnv('USER_PASSWORD'),
-    role: 'user',
+  constructor: {
+    username: requireEnvAny(['CONSTRUCTOR_USERNAME', 'USER_USERNAME']),
+    password: requireEnvAny(['CONSTRUCTOR_PASSWORD', 'USER_PASSWORD']),
+    role: 'constructor',
   },
-  admin: {
-    username: requireEnv('ADMIN_USERNAME'),
-    password: requireEnv('ADMIN_PASSWORD'),
-    role: 'admin',
+  contractor: {
+    username: requireEnvAny(['CONTRACTOR_USERNAME', 'ADMIN_USERNAME']),
+    password: requireEnvAny(['CONTRACTOR_PASSWORD', 'ADMIN_PASSWORD']),
+    role: 'contractor',
   },
 };
 
@@ -74,12 +84,14 @@ function createUploadMiddleware() {
 function createLoginHandler(credentials) {
   return function loginHandler(req, res) {
     const { role, username, password } = req.body;
-    if (!credentials[role]) {
+    const normalizedRole = role === 'user' ? 'constructor' : (role === 'admin' ? 'contractor' : role);
+
+    if (!credentials[normalizedRole]) {
       res.status(400).json({ message: 'Invalid role.' });
       return;
     }
 
-    const expected = credentials[role];
+    const expected = credentials[normalizedRole];
     if (username === expected.username && password === expected.password) {
       res.status(200).json({ message: 'Login successful!', role: expected.role });
       return;

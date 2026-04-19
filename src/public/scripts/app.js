@@ -1,11 +1,14 @@
 // public/scripts/app.js - Main frontend logic
 
 // ── GLOBAL STATE ──
-const currentRole   = localStorage.getItem('role') || 'user';
+const storedRole    = localStorage.getItem('role');
+const currentRole   = storedRole === 'admin'
+  ? 'contractor'
+  : (storedRole === 'user' ? 'constructor' : (storedRole || 'constructor'));
 let allUpdates      = [];
 let filteredUpdates = [];
 let editingId       = null;
-let currentTab      = currentRole === 'admin' ? 'admin' : 'user';
+let currentTab      = currentRole === 'contractor' ? 'contractor' : 'constructor';
 
 // Page titles for each section
 const PAGE_META = {
@@ -56,10 +59,10 @@ window.onload = function () {
   document.getElementById('date').value = today;
   loadDashboard();
 
-  // Hide admin tab for regular users
-  if (currentRole !== 'admin') {
-    var adminTab = document.getElementById('adminTabBtn');
-    if (adminTab) adminTab.style.display = 'none';
+  // Hide contractor tab for constructor role
+  if (currentRole !== 'contractor') {
+    var contractorTab = document.getElementById('contractorTabBtn');
+    if (contractorTab) contractorTab.style.display = 'none';
   }
 };
 
@@ -247,7 +250,7 @@ function clearFilters() {
 // ── RENDER TABLE ──
 function renderTable() {
   var container  = document.getElementById('updatesContainer');
-  var showDelete = (currentRole === 'admin' && currentTab === 'admin');
+  var showDelete = (currentRole === 'contractor' && currentTab === 'contractor');
 
   if (filteredUpdates.length === 0) {
     container.innerHTML = '<p class="empty-state">No results match your search.</p>';

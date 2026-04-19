@@ -2,22 +2,22 @@
 // Handles login form logic: role switching, API call, redirect
 
 // Tracks which role is currently selected on the tab
-let selectedRole = 'user';
+let selectedRole = 'constructor';
 
 // ─────────────────────────────────────────────
 // SWITCH ROLE TAB
-// When user clicks "User Login" or "Admin Login"
+// When user clicks role tabs
 // ─────────────────────────────────────────────
 function switchRole(role) {
   selectedRole = role;
 
   // Update tab button styles
-  document.getElementById('tab-user').classList.remove('active');
-  document.getElementById('tab-admin').classList.remove('active');
+  document.getElementById('tab-constructor').classList.remove('active');
+  document.getElementById('tab-contractor').classList.remove('active');
   document.getElementById('tab-' + role).classList.add('active');
 
   // Update the role label inside the card
-  const label = role === 'admin' ? 'Admin' : 'User';
+  const label = role === 'contractor' ? 'Contractor' : 'Constructor';
   document.getElementById('roleLabel').innerHTML =
     'Logging in as: <strong>' + label + '</strong>';
 

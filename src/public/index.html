@@ -42,8 +42,8 @@
       <div class="user-badge">
         <span class="user-avatar" id="sidebarAvatar">U</span>
         <div class="user-info">
-          <span class="user-name" id="sidebarName">User</span>
-          <span class="user-role" id="sidebarRole">user</span>
+          <span class="user-name" id="sidebarName">Constructor</span>
+          <span class="user-role" id="sidebarRole">constructor</span>
         </div>
       </div>
       <button class="logout-btn" onclick="logout()">⏻ Logout</button>
@@ -200,10 +200,10 @@
           <button class="btn btn-sm btn-outline" onclick="loadUpdates()">🔄 Refresh</button>
         </div>
 
-        <!-- Role tabs: admin sees delete column -->
+        <!-- Role tabs: contractor sees delete column -->
         <div class="tabs" id="tabsRow">
-          <button class="tab-btn active" onclick="switchTab('user', this)">👤 View</button>
-          <button class="tab-btn" id="adminTabBtn" onclick="switchTab('admin', this)">🔐 Admin</button>
+          <button class="tab-btn active" onclick="switchTab('constructor', this)">👷 Constructor View</button>
+          <button class="tab-btn" id="contractorTabBtn" onclick="switchTab('contractor', this)">🛡️ Contractor</button>
         </div>
 
         <!-- Search & Filter Bar -->
@@ -264,14 +264,19 @@
 
   <!-- Role guard + set sidebar user info -->
   <script>
-    const role     = localStorage.getItem('role');
-    const username = localStorage.getItem('username') || 'User';
-    if (!role) window.location.href = '/login.html';
+    const rawRole  = localStorage.getItem('role');
+    const role     = rawRole === 'admin' ? 'contractor' : (rawRole === 'user' ? 'constructor' : rawRole);
+    const username = localStorage.getItem('username') || 'Constructor';
+    if (!role) {
+      window.location.href = '/login.html';
+    } else if (rawRole !== role) {
+      localStorage.setItem('role', role);
+    }
     document.getElementById('sidebarName').textContent   = username;
     document.getElementById('sidebarRole').textContent   = role;
     document.getElementById('sidebarAvatar').textContent = username.charAt(0).toUpperCase();
-    if (role !== 'admin') {
-      document.getElementById('adminTabBtn').style.display = 'none';
+    if (role !== 'contractor') {
+      document.getElementById('contractorTabBtn').style.display = 'none';
     }
   </script>
 

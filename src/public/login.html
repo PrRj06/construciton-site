@@ -20,11 +20,11 @@
 
     <!-- Role selector tabs -->
     <div class="role-tabs">
-      <button class="role-tab active" id="tab-user" onclick="switchRole('user')">
-        👤 User Login
+      <button class="role-tab active" id="tab-constructor" onclick="switchRole('constructor')">
+        👷 Constructor Login
       </button>
-      <button class="role-tab" id="tab-admin" onclick="switchRole('admin')">
-        🔐 Admin Login
+      <button class="role-tab" id="tab-contractor" onclick="switchRole('contractor')">
+        🛡️ Contractor Login
       </button>
     </div>
 
@@ -32,7 +32,7 @@
     <div class="login-card">
 
       <!-- Role badge shown inside card -->
-      <p class="role-label" id="roleLabel">Logging in as: <strong>User</strong></p>
+      <p class="role-label" id="roleLabel">Logging in as: <strong>Constructor</strong></p>
 
       <form id="loginForm">
 
@@ -55,12 +55,6 @@
       <!-- Message shown after login attempt -->
       <div id="loginMessage" class="message hidden"></div>
 
-    </div>
-
-    <!-- Hint box -->
-    <div class="hint-box">
-      <p><strong>Credentials are configured from environment variables.</strong></p>
-      <p>Set login values in the project .env file before starting the server.</p>
     </div>
 
   </div>
