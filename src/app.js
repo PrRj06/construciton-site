@@ -12,7 +12,10 @@ const IS_VERCEL = process.env.VERCEL === '1';
 const UPLOADS_DIR = IS_VERCEL
   ? path.join('/tmp', 'uploads')
   : path.join(PUBLIC_DIR, 'uploads');
-const MAX_UPLOAD_SIZE_BYTES = 5 * 1024 * 1024;
+// Vercel request payload limits are lower than local Express usage.
+const MAX_UPLOAD_SIZE_BYTES = IS_VERCEL
+  ? 4 * 1024 * 1024
+  : 5 * 1024 * 1024;
 
 function requireEnv(name) {
   const value = process.env[name];
