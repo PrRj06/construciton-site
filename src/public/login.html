@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Construction Tracker</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/login.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-wrapper">
+
+    <!-- Site title -->
+    <div class="login-header">
+      <div class="login-icon">🏗️</div>
+      <h1>Construction Tracker</h1>
+      <p>Sign in to continue</p>
+    </div>
+
+    <!-- Role selector tabs -->
+    <div class="role-tabs">
+      <button class="role-tab active" id="tab-user" onclick="switchRole('user')">
+        👤 User Login
+      </button>
+      <button class="role-tab" id="tab-admin" onclick="switchRole('admin')">
+        🔐 Admin Login
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-card">
+
+      <!-- Role badge shown inside card -->
+      <p class="role-label" id="roleLabel">Logging in as: <strong>User</strong></p>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" autocomplete="off" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+          Login
+        </button>
+
+      </form>
+
+      <!-- Message shown after login attempt -->
+      <div id="loginMessage" class="message hidden"></div>
+
+    </div>
+
+    <!-- Hint box -->
+    <div class="hint-box">
+      <p><strong>Credentials are configured from environment variables.</strong></p>
+      <p>Set login values in the project .env file before starting the server.</p>
+    </div>
+
+  </div>
+
+  <script src="scripts/login.js"></script>
+
+</body>
+</html>

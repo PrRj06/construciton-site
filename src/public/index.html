@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Construction Tracker</title>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       SIDEBAR NAVIGATION
+  ════════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">🏗️</span>
+      <span class="brand-text">SiteTrack</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" onclick="showSection('dashboard')">
+        <span class="nav-icon">📊</span>
+        <span>Dashboard</span>
+      </button>
+      <button class="nav-item" onclick="showSection('submit')">
+        <span class="nav-icon">📝</span>
+        <span>Submit Update</span>
+      </button>
+      <button class="nav-item" onclick="showSection('updates')">
+        <span class="nav-icon">📋</span>
+        <span>All Updates</span>
+      </button>
+      <button class="nav-item" onclick="showSection('sites')">
+        <span class="nav-icon">📍</span>
+        <span>Site Progress</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-badge">
+        <span class="user-avatar" id="sidebarAvatar">U</span>
+        <div class="user-info">
+          <span class="user-name" id="sidebarName">User</span>
+          <span class="user-role" id="sidebarRole">user</span>
+        </div>
+      </div>
+      <button class="logout-btn" onclick="logout()">⏻ Logout</button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT AREA
+  ════════════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- ── TOP BAR ── -->
+    <div class="topbar">
+      <div>
+        <h1 class="page-title" id="pageTitle">Dashboard</h1>
+        <p class="page-subtitle" id="pageSubtitle">Overview of all construction activity</p>
+      </div>
+      <button class="print-btn" onclick="printReport()" title="Print Report">🖨️ Print Report</button>
+    </div>
+
+    <!-- ════════════════════════════════
+         SECTION: DASHBOARD
+    ═════════════════════════════════ -->
+    <section id="section-dashboard" class="section active">
+
+      <!-- Stats Cards Row -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#1e3a5f">📋</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-label">Total Updates</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#7c3d0f">🏗️</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-sites">0</div>
+            <div class="stat-label">Active Sites</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#14532d">👷</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-workers">0</div>
+            <div class="stat-label">Total Workers Deployed</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#4a1d96">📈</div>
+          <div class="stat-body">
+            <div class="stat-value" id="stat-avg">0%</div>
+            <div class="stat-label">Avg Progress</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Updates mini-table -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Recent Updates</h2>
+          <button class="btn btn-sm btn-outline" onclick="showSection('updates')">View All →</button>
+        </div>
+        <div id="recentUpdates">Loading...</div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION: SUBMIT UPDATE
+    ═════════════════════════════════ -->
+    <section id="section-submit" class="section">
+
+      <!-- Edit mode banner -->
+      <div id="editBanner" class="edit-banner hidden">
+        ✏️ You are editing an existing record.
+        <button class="cancel-edit-btn" onclick="cancelEdit()">✖ Cancel</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 id="formTitle">Submit Daily Update</h2>
+        </div>
+
+        <!-- IMPORTANT: use enctype for file upload -->
+        <form id="updateForm" enctype="multipart/form-data">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>📅 Date</label>
+              <input type="date" id="date" required/>
+            </div>
+            <div class="form-group">
+              <label>🏗️ Site Name</label>
+              <input type="text" id="siteName" placeholder="e.g. Tower Block A" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>🔨 Work Done Today</label>
+            <textarea id="workDone" rows="3" placeholder="Describe work completed today..." required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>👷 Number of Workers</label>
+              <input type="number" id="numberOfWorkers" placeholder="e.g. 15" min="1" required/>
+            </div>
+            <div class="form-group">
+              <label>📊 Progress (%)</label>
+              <input type="number" id="progressPercentage" placeholder="0–100" min="0" max="100" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>🧱 Materials Used</label>
+            <input type="text" id="materialsUsed" placeholder="e.g. 200 bricks, 10 bags cement" required/>
+          </div>
+
+          <!-- Photo upload field -->
+          <div class="form-group">
+            <label>📸 Site Photo <span class="optional-tag">optional</span></label>
+            <div class="file-upload-wrap">
+              <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(this)"/>
+              <label for="photoInput" class="file-upload-label">
+                📁 Choose Photo (max 5MB)
+              </label>
+            </div>
+            <!-- Preview of selected image -->
+            <div id="photoPreview" class="photo-preview hidden">
+              <img id="previewImg" src="" alt="Preview"/>
+              <button type="button" class="remove-photo-btn" onclick="removePhoto()">✖ Remove</button>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">✅ Submit Update</button>
+          </div>
+
+        </form>
+
+        <div id="formMessage" class="message hidden"></div>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION: ALL UPDATES
+    ═════════════════════════════════ -->
+    <section id="section-updates" class="section">
+      <div class="card">
+        <div class="card-header">
+          <h2>All Construction Updates</h2>
+          <button class="btn btn-sm btn-outline" onclick="loadUpdates()">🔄 Refresh</button>
+        </div>
+
+        <!-- Role tabs: admin sees delete column -->
+        <div class="tabs" id="tabsRow">
+          <button class="tab-btn active" onclick="switchTab('user', this)">👤 View</button>
+          <button class="tab-btn" id="adminTabBtn" onclick="switchTab('admin', this)">🔐 Admin</button>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="search-bar">
+          <div class="search-group">
+            <label>🔍 Search Site</label>
+            <input type="text" id="searchSite" placeholder="Type site name..." oninput="applyFilters()"/>
+          </div>
+          <div class="search-group">
+            <label>📅 From</label>
+            <input type="date" id="fromDate" onchange="applyFilters()"/>
+          </div>
+          <div class="search-group">
+            <label>📅 To</label>
+            <input type="date" id="toDate" onchange="applyFilters()"/>
+          </div>
+          <div class="search-group">
+            <label>&nbsp;</label>
+            <button class="btn btn-sm btn-outline" onclick="clearFilters()">✖ Clear</button>
+          </div>
+        </div>
+
+        <p id="loadingText" class="loading-text">Loading updates...</p>
+        <div id="updatesContainer"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION: SITE PROGRESS TRACKER
+    ═════════════════════════════════ -->
+    <section id="section-sites" class="section">
+      <div class="card">
+        <div class="card-header">
+          <h2>Site-wise Progress</h2>
+          <button class="btn btn-sm btn-outline" onclick="loadSiteProgress()">🔄 Refresh</button>
+        </div>
+        <p id="sitesLoadingText" class="loading-text">Loading sites...</p>
+        <div id="sitesContainer"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════
+       IMAGE LIGHTBOX (fullscreen view)
+  ════════════════════════ -->
+  <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Site Photo"/>
+    <button class="lightbox-close" onclick="closeLightbox()">✖</button>
+  </div>
+
+  <!-- ════════════════════
+       PRINT ONLY SECTION
+  ════════════════════ -->
+  <div id="printArea" class="print-area"></div>
+
+  <script src="scripts/app.js"></script>
+
+  <!-- Role guard + set sidebar user info -->
+  <script>
+    const role     = localStorage.getItem('role');
+    const username = localStorage.getItem('username') || 'User';
+    if (!role) window.location.href = '/login.html';
+    document.getElementById('sidebarName').textContent   = username;
+    document.getElementById('sidebarRole').textContent   = role;
+    document.getElementById('sidebarAvatar').textContent = username.charAt(0).toUpperCase();
+    if (role !== 'admin') {
+      document.getElementById('adminTabBtn').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
