@@ -55,6 +55,11 @@ function showSection(name) {
 
 // ── ON PAGE LOAD ──
 window.onload = function () {
+  if (!storedRole) {
+    window.location.href = '/login.html';
+    return;
+  }
+
   var today = new Date().toISOString().split('T')[0];
   document.getElementById('date').value = today;
   loadDashboard();

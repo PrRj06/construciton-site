@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="styles/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html.auth-pending body { display: none; }
+  </style>
+  <script>
+    (function () {
+      document.documentElement.classList.add('auth-pending');
+
+      const rawRole = localStorage.getItem('role');
+      const role = rawRole === 'admin' ? 'contractor' : (rawRole === 'user' ? 'constructor' : rawRole);
+
+      if (!role) {
+        window.location.replace('/login.html');
+        return;
+      }
+
+      if (rawRole !== role) {
+        localStorage.setItem('role', role);
+      }
+
+      window.__authRole = role;
+      window.__authUsername = localStorage.getItem('username') || 'Constructor';
+      document.documentElement.classList.remove('auth-pending');
+    })();
+  </script>
 </head>
 <body>
 
@@ -264,13 +288,10 @@
 
   <!-- Role guard + set sidebar user info -->
   <script>
-    const rawRole  = localStorage.getItem('role');
-    const role     = rawRole === 'admin' ? 'contractor' : (rawRole === 'user' ? 'constructor' : rawRole);
-    const username = localStorage.getItem('username') || 'Constructor';
+    const role = window.__authRole || localStorage.getItem('role');
+    const username = window.__authUsername || localStorage.getItem('username') || 'Constructor';
     if (!role) {
       window.location.href = '/login.html';
-    } else if (rawRole !== role) {
-      localStorage.setItem('role', role);
     }
     document.getElementById('sidebarName').textContent   = username;
     document.getElementById('sidebarRole').textContent   = role;
