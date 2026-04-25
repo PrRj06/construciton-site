@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteTrack - Construction Progress. Tracked.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/landing.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">
+    <span class="icon">ST</span>
+    <span class="wordmark">SiteTrack</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/login.html" class="nav-cta">Login -></a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="toggleNav()">Menu</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge animate-in">Built for Construction Teams</div>
+    <h1 class="animate-in delay-1">Construction Progress.<br><span>Tracked.</span></h1>
+    <p class="animate-in delay-2">Real-time progress tracking, multi-site management, and instant reports  all in one platform built for field workers and project managers.</p>
+    <div class="hero-btns animate-in delay-3">
+      <a href="/login.html" class="btn-primary">Start Tracking &nbsp;</a>
+      <a href="#features" class="btn-outline">Explore Features</a>
+    </div>
+  </div>
+
+  <!-- Dashboard Mockup -->
+  <div class="hero-visual">
+    <div class="dashboard-mockup">
+      <div class="mockup-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="mockup-title">SiteTrack Dashboard</span>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-sidebar">
+          <div class="mock-icon active"></div>
+          <div class="mock-icon"></div>
+          <div class="mock-icon"></div>
+          <div class="mock-icon"></div>
+        </div>
+        <div class="mockup-main">
+          <div class="mock-stats">
+            <div class="mock-stat">
+              <div class="mock-stat-val">128</div>
+              <div class="mock-stat-lbl">Updates</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">7</div>
+              <div class="mock-stat-lbl">Active Sites</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">342</div>
+              <div class="mock-stat-lbl">Workers</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">74%</div>
+              <div class="mock-stat-lbl">Avg Progress</div>
+            </div>
+          </div>
+          <div class="mock-table-hdr">Recent Updates</div>
+          <div class="mock-row">
+            <span class="mock-site">Block A  Foundation</span>
+            <div class="mock-bar-wrap"><div class="mock-bar" style="width:85%;background:#22c55e"></div></div>
+            <span class="mock-pct">85%</span>
+          </div>
+          <div class="mock-row">
+            <span class="mock-site">Tower B  Framing</span>
+            <div class="mock-bar-wrap"><div class="mock-bar" style="width:52%;background:#fbbf24"></div></div>
+            <span class="mock-pct">52%</span>
+          </div>
+          <div class="mock-row">
+            <span class="mock-site">Site C  Roofing</span>
+            <div class="mock-bar-wrap"><div class="mock-bar" style="width:24%;background:#ef4444"></div></div>
+            <span class="mock-pct">24%</span>
+          </div>
+          <div class="mock-row">
+            <span class="mock-site">Block D  Finishing</span>
+            <div class="mock-bar-wrap"><div class="mock-bar" style="width:100%;background:#15803d"></div></div>
+            <span class="mock-pct">100%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">500<span>+</span></div>
+      <div class="stat-label">Sites Tracked Worldwide</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12<span>K+</span></div>
+      <div class="stat-label">Updates Logged</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">Uptime Guarantee</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2<span>x</span></div>
+      <div class="stat-label">Faster Reporting</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label">Core Features</div>
+    <h2 class="section-title">Everything your site team needs, nothing it doesn't</h2>
+    <p class="section-sub">From daily progress logs to executive reports, SiteTrack keeps every stakeholder aligned across all your active sites.</p>
+
+    <div class="features-grid">
+      <div class="feature-card fc-navy">
+        <div class="feature-icon fi-navy"></div>
+        <h3>Live Dashboard</h3>
+        <p>Real-time snapshot of all active sites. Track total updates, active sites, workers deployed, and average progress at a glance.</p>
+        <span class="feature-tag ft-navy">Real-time</span>
+      </div>
+
+      <div class="feature-card fc-brown">
+        <div class="feature-icon fi-brown"></div>
+        <h3>Daily Update Logging</h3>
+        <p>Submit progress with date, site name, work description, worker count, materials used, progress %, and optional site photos.</p>
+        <span class="feature-tag ft-brown">Photo Upload</span>
+      </div>
+
+      <div class="feature-card fc-green">
+        <div class="feature-icon fi-green"></div>
+        <h3>All Updates Management</h3>
+        <p>Browse, search, and filter all construction updates. Edit existing records, view photo lightboxes, and manage history.</p>
+        <span class="feature-tag ft-green">Searchable</span>
+      </div>
+
+      <div class="feature-card fc-purple">
+        <div class="feature-icon fi-purple"></div>
+        <h3>Site-wise Progress Tracker</h3>
+        <p>Visual grid of all sites with progress bars, completion badges, last update dates, and worker counts per location.</p>
+        <span class="feature-tag ft-purple">Visual</span>
+      </div>
+
+      <div class="feature-card fc-brown">
+        <div class="feature-icon fi-brown"></div>
+        <h3>Print Reports</h3>
+        <p>Generate complete, print-ready construction reports on demand. Export all site data in a formatted, professional layout.</p>
+        <span class="feature-tag ft-brown">Export-ready</span>
+      </div>
+
+      <div class="feature-card fc-navy">
+        <div class="feature-icon fi-navy"></div>
+        <h3>Role-Based Access</h3>
+        <p>Constructor role for field workers to submit updates. Contractor role for managers with full access including delete permissions.</p>
+        <span class="feature-tag ft-navy">Secure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label">Workflow</div>
+    <h2 class="section-title">Up and running in minutes</h2>
+    <p class="section-sub">A simple, repeatable workflow your entire team can follow every day on any device.</p>
+
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Login & Select Role</h3>
+        <p>Sign in as a Constructor or Contractor. Each role has tailored access and permissions.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Submit Daily Update</h3>
+        <p>Fill the progress form with work done, workers, materials, and optionally attach a site photo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Track Progress</h3>
+        <p>Monitor all sites from the dashboard. Visual progress bars show status across every project.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Generate Reports</h3>
+        <p>Print professional progress reports at any time for client meetings, audits, or reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS VISUALIZATION -->
+<section class="progress-section">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label">Site Progress Tracker</div>
+    <h2 class="section-title">Every site. Every update. Visualized.</h2>
+    <p class="section-sub">Color-coded progress bars make it instant to identify which sites need attention and which are on track.</p>
+
+    <div class="progress-showcase">
+      <div class="ps-header">
+        <div class="ps-title"> Site-wise Progress Overview</div>
+        <div style="color:rgba(255,255,255,0.3);font-size:0.75rem;">6 Active Sites</div>
+      </div>
+      <div class="ps-body">
+        <div class="site-card">
+          <div class="sc-name"> Tower Block A</div>
+          <div class="sc-date">Last updated: Today, 2:30 PM</div>
+          <div class="sc-workers"> 48 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-green" style="width:85%"></div></div>
+          <div class="sc-pct pct-green"><span>85% Complete</span></div>
+        </div>
+        <div class="site-card">
+          <div class="sc-name"> Riverside Complex</div>
+          <div class="sc-date">Last updated: Yesterday, 5:00 PM</div>
+          <div class="sc-workers"> 32 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-yellow" style="width:52%"></div></div>
+          <div class="sc-pct pct-yellow"><span>52% Complete</span></div>
+        </div>
+        <div class="site-card">
+          <div class="sc-name"> Central Hub</div>
+          <div class="sc-date">Last updated: 2 days ago</div>
+          <div class="sc-workers"> 15 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-red" style="width:24%"></div></div>
+          <div class="sc-pct pct-red"><span>24% Complete</span></div>
+        </div>
+        <div class="site-card">
+          <div class="sc-name"> North Wing</div>
+          <div class="sc-date">Last updated: Today, 11:00 AM</div>
+          <div class="sc-workers"> 60 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-darkgreen" style="width:100%"></div></div>
+          <div class="sc-pct pct-darkgreen"><span>100% Complete</span><span class="done-badge"> Done</span></div>
+        </div>
+        <div class="site-card">
+          <div class="sc-name"> South Pavilion</div>
+          <div class="sc-date">Last updated: Today, 9:15 AM</div>
+          <div class="sc-workers"> 27 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-yellow" style="width:67%"></div></div>
+          <div class="sc-pct pct-green"><span>67% Complete</span></div>
+        </div>
+        <div class="site-card">
+          <div class="sc-name"> East Gate Tower</div>
+          <div class="sc-date">Last updated: Yesterday, 3:45 PM</div>
+          <div class="sc-workers"> 41 Workers on Site</div>
+          <div class="sc-bar-wrap"><div class="sc-bar bar-green" style="width:91%"></div></div>
+          <div class="sc-pct pct-green"><span>91% Complete</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USER ROLES -->
+<section class="roles-section">
+  <div style="max-width:1000px;margin:0 auto">
+    <div class="section-label">User Roles</div>
+    <h2 class="section-title">Right access for every team member</h2>
+    <p class="section-sub">Two roles designed around how construction teams actually work  in the field and in the office.</p>
+
+    <div class="roles-grid">
+      <div class="role-card constructor">
+        <div class="role-badge"> Constructor</div>
+        <h3>Site Worker</h3>
+        <p>Access the tools you need to log progress and stay accountable  without the clutter of admin features.</p>
+        <ul class="role-features">
+          <li>Submit daily progress updates</li>
+          <li>Upload site photos</li>
+          <li>View real-time dashboard</li>
+          <li>Browse all updates</li>
+          <li>Edit own submissions</li>
+          <li>View site progress tracker</li>
+        </ul>
+        <div class="role-locked">Delete records (admin only)</div>
+      </div>
+
+      <div class="role-card contractor">
+        <div class="role-badge"> Contractor</div>
+        <h3>Project Manager</h3>
+        <p>Full platform access to oversee all sites, manage records, and generate executive-ready reports.</p>
+        <ul class="role-features">
+          <li>All Constructor capabilities</li>
+          <li>Delete any update record</li>
+          <li>Edit all team submissions</li>
+          <li>Generate & print reports</li>
+          <li>Multi-site oversight</li>
+          <li>Full data management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label">Why SiteTrack</div>
+    <h2 class="section-title">Built for the realities of construction</h2>
+    <p class="section-sub">Not another generic project tool. SiteTrack is purpose-built for the way construction teams operate on and off-site.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Mobile-First Design</h4>
+          <p>Log progress from the field on any device. Fully responsive from phone to desktop.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Cloud Deployed</h4>
+          <p>Hosted on Vercel with MongoDB. Your data is always accessible, always backed up.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Photo Documentation</h4>
+          <p>Attach site photos to every update. Build a visual timeline of every project's progress.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Powerful Search & Filter</h4>
+          <p>Find any update by site name or date range instantly. No more digging through spreadsheets.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Instant Analytics</h4>
+          <p>Dashboard auto-calculates key stats: workers deployed, progress averages, active sites.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"></div>
+        <div>
+          <h4>Print-Ready Reports</h4>
+          <p>Generate complete project reports in one click. Perfect for client presentations and audits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label" style="color:var(--brown-light)">Pricing</div>
+    <h2 class="section-title">Simple, transparent pricing</h2>
+    <p class="section-sub">Start free, scale as your sites grow. No hidden fees, no long-term contracts.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-amount">Free<span> forever</span></div>
+        <div class="price-desc">Perfect for small teams managing a single site.</div>
+        <ul class="price-features">
+          <li>1 Active Site</li>
+          <li>2 User Accounts</li>
+          <li>Unlimited Updates</li>
+          <li>Photo Uploads (5MB)</li>
+          <li class="no">Print Reports</li>
+          <li class="no">Date Range Filters</li>
+        </ul>
+        <a href="/login.html" class="btn-price-outline">Get Started Free</a>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-tag">Most Popular</div>
+        <div class="price-name">Professional</div>
+        <div class="price-amount">2,499<span>/mo</span></div>
+        <div class="price-desc">For growing construction companies with multiple sites.</div>
+        <ul class="price-features">
+          <li>Up to 10 Active Sites</li>
+          <li>10 User Accounts</li>
+          <li>Unlimited Updates</li>
+          <li>Photo Uploads (5MB)</li>
+          <li>Print Reports</li>
+          <li>Date Range Filters</li>
+        </ul>
+        <a href="/login.html" class="btn-price-primary">Start Free Trial</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Enterprise</div>
+        <div class="price-amount">Custom</div>
+        <div class="price-desc">For large contractors managing 10+ sites across regions.</div>
+        <ul class="price-features">
+          <li>Unlimited Sites</li>
+          <li>Unlimited Users</li>
+          <li>Unlimited Updates</li>
+          <li>Priority Support</li>
+          <li>Print Reports</li>
+          <li>Custom Integrations</li>
+        </ul>
+        <a href="mailto:hello@sitetrack.in" class="btn-price-outline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label" style="color:var(--navy)">FAQ</div>
+    <h2 class="section-title" style="max-width:100%">Frequently Asked Questions</h2>
+    <p class="section-sub">Still have questions? We've got answers.</p>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the difference between Constructor and Contractor roles?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Constructor (site worker) can submit daily updates, view dashboards, and browse all updates. They cannot delete records. Contractor (project manager) has full access including the ability to delete records, edit all submissions, and generate reports.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I track multiple construction sites simultaneously?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. SiteTrack is designed for multi-site management. The Site Progress Tracker section gives you a visual overview of all active sites, and you can filter updates by site name or date range from the All Updates section.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What file types are supported for photo uploads?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>SiteTrack accepts any standard image format (JPG, PNG, WEBP, etc.). Files must be under 5MB per upload (4MB on cloud deployment). You'll see a preview before submitting, and photos can be viewed in a full-screen lightbox from the updates table.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is SiteTrack mobile-friendly for field workers?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. The entire application is responsive and designed for use on mobile phones, tablets, and desktops. Field workers can log updates directly from the construction site using any smartphone browser.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I generate a progress report?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Click the " Print Report" button in the top bar. SiteTrack will fetch all your update records, generate a formatted HTML table with all dates, sites, work descriptions, and progress percentages, and trigger your browser's print dialog. You can print or save as PDF.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Where is my data stored? Is it secure?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>All data is stored in MongoDB with timestamps for audit tracking. The platform is deployed on Vercel with environment-variable-based credential management. File uploads are handled server-side and served via secure URLs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div style="position:relative;z-index:2">
+    <h2 class="section-title">Ready to track your first site?</h2>
+    <p>Join construction teams already using SiteTrack to stay on schedule and on budget.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="/login.html" class="btn-primary" style="font-size:1rem;padding:16px 32px">Get Started Free &nbsp;</a>
+      <a href="#features" class="btn-outline" style="font-size:1rem;padding:16px 32px">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="footer-brand">
+        <span></span>
+        <span class="name">SiteTrack</span>
+      </a>
+      <p class="footer-desc">Construction site progress tracking made simple. Built for field workers and project managers who need reliable, real-time visibility.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How It Works</a>
+      <a href="/login.html">Login</a>
+    </div>
+    <div class="footer-col">
+      <h5>Roles</h5>
+      <a href="#">Constructor</a>
+      <a href="#">Contractor</a>
+      <a href="#">Project Manager</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@sitetrack.in">Contact</a>
+      <a href="#">Documentation</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span> 2025 SiteTrack. All rights reserved.</span>
+    <span>Built for construction. Deployed on Vercel.</span>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function toggleNav() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#0f1f35;padding:20px;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);';
+    }
+  }
+
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .step, .benefit-item, .role-card, .site-card, .price-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
