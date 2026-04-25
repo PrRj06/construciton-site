@@ -18,7 +18,6 @@
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="/login.html" class="nav-cta">Login -></a></li>
   </ul>
@@ -364,63 +363,6 @@
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="section-label" style="color:var(--brown-light)">Pricing</div>
-    <h2 class="section-title">Simple, transparent pricing</h2>
-    <p class="section-sub">Start free, scale as your sites grow. No hidden fees, no long-term contracts.</p>
-
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">Starter</div>
-        <div class="price-amount">Free<span> forever</span></div>
-        <div class="price-desc">Perfect for small teams managing a single site.</div>
-        <ul class="price-features">
-          <li>1 Active Site</li>
-          <li>2 User Accounts</li>
-          <li>Unlimited Updates</li>
-          <li>Photo Uploads (5MB)</li>
-          <li class="no">Print Reports</li>
-          <li class="no">Date Range Filters</li>
-        </ul>
-        <a href="/login.html" class="btn-price-outline">Get Started Free</a>
-      </div>
-
-      <div class="price-card popular">
-        <div class="popular-tag">Most Popular</div>
-        <div class="price-name">Professional</div>
-        <div class="price-amount">2,499<span>/mo</span></div>
-        <div class="price-desc">For growing construction companies with multiple sites.</div>
-        <ul class="price-features">
-          <li>Up to 10 Active Sites</li>
-          <li>10 User Accounts</li>
-          <li>Unlimited Updates</li>
-          <li>Photo Uploads (5MB)</li>
-          <li>Print Reports</li>
-          <li>Date Range Filters</li>
-        </ul>
-        <a href="/login.html" class="btn-price-primary">Start Free Trial</a>
-      </div>
-
-      <div class="price-card">
-        <div class="price-name">Enterprise</div>
-        <div class="price-amount">Custom</div>
-        <div class="price-desc">For large contractors managing 10+ sites across regions.</div>
-        <ul class="price-features">
-          <li>Unlimited Sites</li>
-          <li>Unlimited Users</li>
-          <li>Unlimited Updates</li>
-          <li>Priority Support</li>
-          <li>Print Reports</li>
-          <li>Custom Integrations</li>
-        </ul>
-        <a href="mailto:hello@sitetrack.in" class="btn-price-outline">Contact Sales</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div style="max-width:1100px;margin:0 auto">
@@ -512,7 +454,6 @@
     <div class="footer-col">
       <h5>Product</h5>
       <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
       <a href="#how">How It Works</a>
       <a href="/login.html">Login</a>
     </div>
@@ -562,7 +503,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.feature-card, .step, .benefit-item, .role-card, .site-card, .price-card').forEach(el => {
+  document.querySelectorAll('.feature-card, .step, .benefit-item, .role-card, .site-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity .5s ease, transform .5s ease';

@@ -890,136 +890,6 @@
     line-height: 1.6;
   }
 
-  /* PRICING */
-  .pricing-section {
-    padding: 100px 5%;
-    background: var(--gray-light);
-  }
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .price-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 36px 32px;
-    border: 2px solid transparent;
-    transition: all .3s;
-    position: relative;
-  }
-
-  .price-card:hover { border-color: var(--navy); transform: translateY(-4px); }
-  .price-card.popular { border-color: var(--navy); }
-
-  .popular-tag {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--navy);
-    color: var(--white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-
-  .price-name {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-  }
-
-  .price-amount {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: -0.03em;
-    margin-bottom: 4px;
-  }
-
-  .price-amount span {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-muted);
-  }
-
-  .price-desc {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 28px;
-    line-height: 1.5;
-  }
-
-  .price-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .price-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--text);
-  }
-
-  .price-features li::before {
-    content: 'âœ“';
-    color: var(--green);
-    font-weight: 700;
-    font-size: 0.8rem;
-  }
-
-  .price-features li.no::before { content: 'â€“'; color: var(--gray); }
-  .price-features li.no { color: var(--gray); }
-
-  .btn-price-primary {
-    display: block;
-    text-align: center;
-    background: var(--navy);
-    color: var(--white);
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all .2s;
-  }
-
-  .btn-price-primary:hover { background: var(--navy-light); }
-
-  .btn-price-outline {
-    display: block;
-    text-align: center;
-    background: transparent;
-    color: var(--navy);
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    border: 2px solid var(--navy);
-    transition: all .2s;
-  }
-
-  .btn-price-outline:hover { background: var(--navy); color: var(--white); }
-
   /* FAQ */
   .faq-section {
     padding: 100px 5%;
@@ -1200,7 +1070,6 @@
     .stat-item:nth-child(2n) { border-right: none; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .ps-body { grid-template-columns: repeat(2, 1fr); }
-    .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
 
@@ -1212,7 +1081,7 @@
     .hero { padding: 100px 4% 60px; }
     .hero h1 { font-size: 2.4rem; }
 
-    .section, .how-section, .benefits-section, .pricing-section,
+    .section, .how-section, .benefits-section,
     .roles-section, .progress-section, .faq-section { padding: 70px 4%; }
 
     .features-grid { grid-template-columns: 1fr; }

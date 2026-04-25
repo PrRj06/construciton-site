@@ -108,13 +108,13 @@ function createApp() {
 
   app.use(express.json());
   app.use(cors());
-  app.use(express.static(PUBLIC_DIR));
+  app.use(express.static(PUBLIC_DIR, { index: false }));
 
   if (IS_VERCEL) {
     app.use('/uploads', express.static(UPLOADS_DIR));
   }
 
-  app.get('/', (req, res) => res.redirect('/login.html'));
+  app.get('/', (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'landing.html')));
   app.post('/login', createLoginHandler(CREDENTIALS));
   app.use('/', updateRoutes);
 
